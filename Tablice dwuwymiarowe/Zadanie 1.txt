@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[,] array = new int[10, 10];
+
+        for (int row = 0; row < 10; row++)
+        {
+            if (row % 2 == 0)
+            {
+                // Fill even rows in ascending order
+                for (int col = 0; col < 10; col++)
+                {
+                    array[row, col] = (row * 10) + col + 1;
+                }
+            }
+            else
+            {
+                // Fill odd rows in descending order
+                for (int col = 9; col >= 0; col--)
+                {
+                    array[row, col] = (row * 10) + (9 - col) + 1;
+                }
+            }
+        }
+
+        // Print the array
+        for (int row = 0; row < 10; row++)
+        {
+            for (int col = 0; col < 10; col++)
+            {
+                Console.Write(array[row, col] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
